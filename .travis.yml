@@ -3,13 +3,14 @@ matrix:
   include:
      - os: linux
        dist: xenial
-     - os: osx
-       osx_image: xcode10.2
-     - os: windows
+#     - os: osx
+#       osx_image: xcode10.2
+#     - os: windows
 addons:
   apt:
     packages:
-      - qt5-dev
+      - qt5-qmake
+      - qt5-image-formats-plugins
   homebrew:
     packages:
       - qt
