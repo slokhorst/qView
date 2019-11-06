@@ -6,6 +6,8 @@ matrix:
 #     - os: osx
 #       osx_image: xcode10.2
 #     - os: windows
+git:
+  lfs_skip_smudge: true
 addons:
   apt:
     packages:
