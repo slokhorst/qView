@@ -1,0 +1,20 @@
+language: cpp
+matrix:
+  include:
+     - os: linux
+       dist: xenial
+     - os: osx
+       osx_image: xcode10.2
+     - os: windows
+addons:
+  apt:
+    packages:
+      - qt5-dev
+  homebrew:
+    packages:
+      - qt
+
+script:
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew link --force qt ; fi
+  - qmake
+  - make
