@@ -4,10 +4,7 @@ matrix:
      - os: linux
        dist: bionic
      - os: osx
-       osx_image: xcode11.2
-#     - os: windows
-git:
-  lfs_skip_smudge: true
+       osx_image: xcode10.3
 addons:
   apt:
     packages:
@@ -17,8 +14,11 @@ addons:
   homebrew:
     packages:
       - qt
+git:
+  lfs_skip_smudge: true
 
-script:
+install:
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew link --force qt ; fi
+script:
   - qmake
   - make
